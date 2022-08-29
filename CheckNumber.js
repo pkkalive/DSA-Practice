@@ -4,13 +4,12 @@ const arr = [34, 57, 82, 41, 65, 35, 82, 27, 36, 12, 6, 40, 66, 99, 25, 29, 22, 
 function checkNumber(arr, x) {
     if (arr.length === 0) {
         return false
+    }
+    let key = arr.shift()
+    if (key === x) {
+        return true
     } else {
-        let key = arr.shift()
-        if (key === x) {
-            return true
-        } else {
-            return checkNumber(arr, x)
-        }
+        return checkNumber(arr, x)
     }
 }
 console.log(checkNumber(arr, 61))
@@ -19,12 +18,11 @@ console.log(checkNumber(arr, 61))
 function checkNumber2(arr, i, x) {
     if (arr.length === i) {
         return false
+    }
+    if (arr[i] === x) {
+        return true
     } else {
-        if (arr[i] === x) {
-            return true
-        } else {
-            return checkNumber2(arr, i+1, x)
-        }
+        return checkNumber2(arr, i+1, x)
     }
 }
 console.log(checkNumber2(arr, 0,61))
