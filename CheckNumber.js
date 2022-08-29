@@ -26,3 +26,16 @@ function checkNumber2(arr, i, x) {
     }
 }
 console.log(checkNumber2(arr, 0,61))
+
+// creates extra space
+function checkNumber3(arr, x) {
+    if (arr.length === 0) {
+        return false
+    }
+    if (arr[0] === x) {
+        return true
+    } else {
+        return checkNumber3(arr.slice(1), x)
+    }
+}
+console.log(checkNumber3(arr, 61))
